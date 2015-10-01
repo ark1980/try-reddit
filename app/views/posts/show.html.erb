@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2><%= @post.title %></h2>
+      <p class="text-info"><%= @post.body %></p><br>
+      <%= link_to "Edit", edit_post_path, class: "btn btn-success" %><hr>
+    </div>
+  </div>
+</div>
