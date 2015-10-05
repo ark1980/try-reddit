@@ -8,6 +8,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <% if flash[:notice] %>
+    <div id="notice_wrapper">
+      <p><%= flash[:notice] %></p>
+    </div>
+  <% elsif flash[:error] %>
+    <div id="error_wrapper">
+      <p><%= flash[:error] %></p>
+    </div>
+  <% elsif flash[:alert] %>
+    <div id="alert_wrapper">
+      <p><%= flash[:alert] %></p>
+    </div>
+  <% end %>
+
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
