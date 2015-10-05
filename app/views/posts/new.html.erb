@@ -2,11 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-8">
       <h1>New Post</h1>
-      <%= simple_form_for @post do |f| %>
-        <%= f.input :title, placeholder: 'Enter your post title', hint: 'At least 5 characters' %>
-        <%= f.input :body, placeholder: 'Enter your post body', input_html: { rows: 8 } %>
-        <%= f.button :submit %>
-      <% end %>
+      <%= render "form" %>
     </div>
   </div>
 </div>
