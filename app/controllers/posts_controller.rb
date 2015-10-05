@@ -17,7 +17,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Your post has saved successfully"
       redirect_to @post
     else
-      flash[:errore] = "There was an error saving the post. Please try again."
+      flash[:error] = "There was an error saving the post. Please try again."
       render :new
     end
   end
@@ -32,13 +32,21 @@ class PostsController < ApplicationController
       flash[:notice] = "Post was updated"
       redirect_to @post
     else
-      flash[:errore] = "There was an error saving the post. Please try again."
+      flash[:error] = "There was an error saving the post. Please try again."
       render :edit
     end
   end
 
   def destroy
+    @post = Post.find(params[:id])
 
+    if @post.destroy
+      flash[:notice] = "Post was deleted successfully."
+      redirect_to @post
+    else
+     flash[:error] = "There was an errore deleting the post."
+     render :show
+   end
   end
 
   private
