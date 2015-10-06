@@ -1,4 +1,5 @@
-<div class="media">
+<div class="well">
   <p><%= comment.body %></p>
-  <small class="text-muted">Created at <%= time_ago_in_words(comment.created_at) %> ago</small>
+  <small><%= link_to "Delete", [@post, comment], method: :delete, class: "text-danger" %>
+  <em class="text-muted"> | Created at <%= time_ago_in_words(comment.created_at) %> ago</em></small>
 </div>
